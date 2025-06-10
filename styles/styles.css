@@ -1,271 +1,144 @@
-/* Reset e fonte base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 html,
 body {
-    min-height: 100%;
-    width: 100%;
-    font-family: 'Bungee', Arial, sans-serif;
-    background: #181c2f;
-    color: #fff;
-    scroll-behavior: smooth;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-/* HERO BACKGROUND CAMADAS */
-.hero-bg {
-    position: relative;
+body {
     min-height: 100vh;
-    width: 100vw;
+    min-width: 100vw;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.bg-layer {
+.parallax-section {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.parallax-img {
     position: absolute;
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    left: 0;
     top: 0;
+    left: 0;
     pointer-events: none;
     user-select: none;
-    z-index: 1;
-    opacity: 1;
-    /* Fundo 100% visível */
 }
 
-.layer1 {
+.layer-fundo {
     z-index: 1;
 }
 
-.layer2 {
+.layer-meio {
     z-index: 2;
 }
 
-.layer3 {
+.layer-meio2 {
     z-index: 3;
 }
 
-.layer4 {
+.layer-frente {
     z-index: 4;
 }
 
-.hero-content {
+.tela-home {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     z-index: 10;
-    width: 100vw;
+}
+
+.conteudo-inicio {
+    background: rgba(24, 24, 40, 0.92);
+    border-radius: 18px;
+    padding: 40px 32px 32px 32px;
+    box-shadow: 0 2px 24px #a259ff55;
     text-align: center;
-    padding: 0 16px;
+    min-width: 320px;
+}
+
+.titulo-principal {
+    font-family: 'Bungee', Arial, sans-serif;
+    font-size: 4.0rem;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+.subtitulo-inicio {
+    font-size: 1.1rem;
+    color: #bdbdbd;
+    margin-bottom: 28px;
+}
+
+.btnJogar {
+    font-size: 1.3rem;
+    padding: 18px 44px;
+    border-radius: 10px;
+    border: none;
+    background: #a259ff;
+    color: #fff;
+    font-family: 'Bungee', Arial, sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btnJogar:hover {
+    background: #42e2e7;
+}
+
+.sessao-jogo {
+    min-height: 100vh;
+    min-width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-/* Título e subtítulo */
-.titulo-principal {
-    font-size: 3.2rem;
-    letter-spacing: 2px;
-    color: #fff;
-    text-shadow: 0 2px 24px #a259ff88, 0 0 2px #000;
-    margin-bottom: 18px;
-}
-
-.subtitulo {
-    font-size: 1.3rem;
-    margin-bottom: 38px;
-    color: #bdbaff;
-    text-shadow: 0 2px 8px #000;
-}
-
-/* BOTÃO RGB ANIMADO SÓ NA BORDA */
-.btn-jogue-agora-rgb {
     position: relative;
-    display: inline-block;
-    padding: 22px 54px;
-    font-size: 1.5rem;
-    font-family: "Bungee", sans-serif;
-    text-transform: uppercase;
-    color: #fff;
-    background: #181c2f;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    overflow: hidden;
-    font-weight: bold;
-    z-index: 1;
-    box-shadow: 0 0 0 4px #a259ff, 0 2px 16px rgba(0, 0, 0, 0.2);
-    transition: transform 0.15s, box-shadow 0.15s;
-    margin-bottom: 18px;
-}
-
-.btn-jogue-agora-rgb:before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 50px;
-    padding: 3px;
-    background: conic-gradient(#fff, #a259ff, #fff, #a259ff, #fff);
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-    z-index: 2;
-    animation: btn-rgb-border 2s linear infinite;
-}
-
-@keyframes btn-rgb-border {
-    0% {
-        filter: hue-rotate(0deg);
-    }
-
-    100% {
-        filter: hue-rotate(360deg);
-    }
-}
-
-.btn-jogue-agora-rgb:hover {
-    transform: scale(1.06);
-    box-shadow: 0 4px 32px #a259ffcc;
-    color: #fff;
-}
-
-/* ÁREA DO JOGO */
-.sessao-jogo {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(120deg, #232347 60%, #181c2f 100%);
-    padding: 0;
+    z-index: 10;
 }
 
 .game-card {
-    background: rgba(20, 20, 40, 0.98);
-    border-radius: 24px;
-    box-shadow: 0 4px 32px #a259ff44;
-    padding: 48px 32px 32px 32px;
+    background: rgba(24, 24, 40, 0.92);
+    border-radius: 18px;
+    padding: 40px 32px 32px 32px;
+    box-shadow: 0 2px 24px #a259ff55;
     text-align: center;
     min-width: 320px;
-    max-width: 90vw;
-    border: 2px solid #a259ff44;
-    position: relative;
-    width: 480px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.escolha-titulo {
-    font-size: 1.6rem;
-    color: #fff;
-    margin-bottom: 28px;
-    letter-spacing: 1px;
-    text-shadow: 0 2px 8px #000;
 }
 
 .botoes-jogo {
     display: flex;
+    gap: 18px;
     justify-content: center;
-    gap: 32px;
-    margin-bottom: 28px;
-    flex-wrap: wrap;
+    margin-bottom: 24px;
 }
 
 .btn-jogo.gamer-btn {
-    font-family: "Bungee", sans-serif;
     font-size: 1.2rem;
-    padding: 18px 32px;
-    border-radius: 18px;
+    padding: 16px 24px;
+    border-radius: 10px;
     border: none;
-    background: linear-gradient(90deg, #a259ff, #6C5CE7, #a259ff);
-    background-size: 200% auto;
+    background: #a259ff;
     color: #fff;
-    font-weight: bold;
+    font-family: 'Bungee', Arial, sans-serif;
     cursor: pointer;
-    box-shadow: 0 2px 16px #6C5CE799;
-    transition: transform 0.15s, box-shadow 0.15s, background 0.3s;
-    outline: none;
-    margin: 0 8px;
-    animation: gamer-btn-move 2.5s linear infinite;
-}
-
-@keyframes gamer-btn-move {
-    to {
-        background-position: 200% center;
-    }
+    transition: background 0.2s;
 }
 
 .btn-jogo.gamer-btn:hover {
-    transform: scale(1.08);
-    box-shadow: 0 4px 32px #a259ffcc;
-    background: linear-gradient(90deg, #6C5CE7, #a259ff, #6C5CE7);
-    background-size: 200% auto;
+    background: #42e2e7;
 }
 
-.result {
-    margin-top: 18px;
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #fff;
-    min-height: 32px;
-    text-shadow: 0 2px 8px #000;
-}
-
-/* Responsivo */
-@media (max-width: 900px) {
-    .game-card {
-        width: 98vw;
-        min-width: unset;
-        padding: 24px 8px 18px 8px;
-    }
-
-    .sessao-jogo {
-        padding: 0;
-    }
-}
-
-@media (max-width: 700px) {
-    .titulo-principal {
-        font-size: 2.1rem;
-    }
-
-    .escolha-titulo {
-        font-size: 1.1rem;
-    }
-
-    .botoes-jogo {
-        gap: 12px;
-    }
-
-    .btn-jogo.gamer-btn {
-        padding: 12px 10px;
-        font-size: 1rem;
-    }
-
-    .hero-bg {
-        min-height: 70vh;
-    }
-
-    .bg-layer {
-        height: 70vh;
-    }
-
-    .game-card {
-        width: 98vw;
-    }
-}
-
-/* Modal de disputa */
+/* Modal */
 .modal-disputa {
     display: none;
     position: fixed;
@@ -274,20 +147,9 @@ body {
     top: 0;
     right: 0;
     bottom: 0;
-    background: rgba(20, 20, 40, 0.85);
-    align-items: center;
+    background: rgba(24, 24, 40, 0.92);
     justify-content: center;
-    animation: fadeIn 0.2s;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    align-items: center;
 }
 
 .modal-disputa.active {
@@ -295,125 +157,91 @@ body {
 }
 
 .modal-disputa-inner {
-    background: rgba(30, 30, 60, 0.98);
+    background: #232347;
     border-radius: 18px;
-    padding: 36px 32px 28px 32px;
-    box-shadow: 0 4px 32px #a259ff88;
+    padding: 32px 24px;
+    min-width: 320px;
+    box-shadow: 0 2px 24px #a259ff55;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 320px;
-    max-width: 90vw;
 }
 
-.disputa-titulos {
-    display: flex;
-    justify-content: space-between;
-    width: 320px;
-    max-width: 80vw;
-    margin-bottom: 18px;
-    font-size: 1.3rem;
-    font-family: "Bungee", sans-serif;
-    color: #fff;
-    letter-spacing: 1px;
-}
-
-.disputa-titulos span:first-child {
-    text-align: left;
-}
-
-.disputa-titulos span:last-child {
-    text-align: right;
-}
-
-.disputa-gifs {
-    display: flex;
-    gap: 48px;
-    align-items: center;
-    justify-content: center;
-}
-
-.disputa-gifs img {
+.gif-resultado {
     width: 120px;
-    height: 120px;
-    object-fit: contain;
-    background: #232347;
-    border-radius: 16px;
-    box-shadow: 0 2px 12px #0008;
-    border: 2px solid #a259ff55;
+    height: auto;
+    display: block;
+    margin: 18px auto 0 auto;
 }
 
-@media (max-width: 600px) {
-    .modal-disputa-inner {
+.btn-fechar-modal {
+    margin-top: 22px;
+    min-width: 100px;
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: none;
+    background: #a259ff;
+    color: #fff;
+    font-family: 'Bungee', Arial, sans-serif;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+
+    .game-card,
+    .modal-disputa-inner,
+    .conteudo-inicio {
+        min-width: 0;
+        width: 95vw;
         padding: 18px 4vw;
     }
-
-    .disputa-titulos {
-        width: 180px;
-        font-size: 1rem;
-    }
-
-    .disputa-gifs {
-        gap: 16px;
-    }
-
-    .disputa-gifs img {
-        width: 70px;
-        height: 70px;
-    }
 }
 
-.placar-externo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    margin-bottom: 32px;
-    margin-top: 24px;
+.tela-home-simples {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 48px;
+    padding-top: 48px;
 }
 
-.placar-caixa {
-    background: #232347;
-    border-radius: 16px;
-    padding: 16px 32px;
-    box-shadow: 0 2px 12px #a259ff55;
+.topo-home {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 120px;
+    margin-bottom: 32px;
 }
 
-.placar-caixa.usuario {
-    border: 2px solid #42e2e7;
-}
-
-.placar-caixa.computador {
-    border: 2px solid #a259ff;
-}
-
-.placar-nome {
+.titulo-principal {
+    font-family: 'Bungee', Arial, sans-serif;
+    font-size: 4.5rem;
+    margin-bottom: 8px;
     color: #fff;
-    font-size: 1.1rem;
-    margin-bottom: 6px;
-    font-family: "Bungee", sans-serif;
-    letter-spacing: 1px;
+    text-shadow: 0 2px 12px #000a;
 }
 
-.placar-pontos {
-    font-size: 2.2rem;
+.subtitulo-inicio {
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-bottom: 0;
+    text-align: center;
+    text-shadow: 0 2px 12px #07034d;
+}
+
+.btnJogar {
+    font-size: 2rem;
+    padding: 20px 60px;
+    border-radius: 16px;
+    border: none;
+    background: linear-gradient(90deg, #a259ff 40%, #42e2e7 100%);
     color: #fff;
-    font-family: "Bungee", sans-serif;
-    font-weight: bold;
+    font-family: 'Bungee', Arial, sans-serif;
+    cursor: pointer;
+    box-shadow: 0 4px 24px #0005;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: -50px;
 }
 
-.placar-x {
-    font-size: 2.2rem;
-    color: #a259ff;
-    font-family: "Bungee", sans-serif;
-    font-weight: bold;
-    margin: 0 8px;
-}
-
-.placar-nome {
-    font-size: 0.8rem;
+.btnJogar:hover {
+    background: linear-gradient(90deg, #42e2e7 0%, #a259ff 100%);
+    transform: scale(1.05);
 }
